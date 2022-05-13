@@ -5,16 +5,26 @@ function obtenerDatos(){
     const url = "data/nombre.json"
 
     fetch(url)
-        .then(res =>{
-            // console.log(res.json())
-            return res.json()
-        
-        })
-        .then(datos =>{
-            mostrarHTML(datos)
-        })
+        .then(res => res.json())
+        .then(datos => mostrarHTML(datos))
+  
 }
 
-function mostrarHTML (nombre){
+function mostrarHTML (nombre) {
+    const {name, username, phone, addrees: {city}} = nombre
     console.log(nombre);
+    const body = document.querySelector("body")
+    const div = document.createElement("div")
+
+    div.innerHTML = `
+    <div class"nombre">Nombre: ${name}<div/>
+    <div class"nombre">Usuario: ${username}<div/>
+    <div class"nombre">Direccion: ${city}<div/>
+    <div class"nombre">Telefono: ${phone}<div/>
+    
+    `
+
+    body.appendChild(div)
+
+
 }
