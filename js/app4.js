@@ -28,9 +28,9 @@ function mostrarHTML(imagenes) {
 
         div.innerHTML = `
         <hr>
-        <div class='nombre'>titulo ${title} </div>
-        <div class='usuario'>url: ${url} </div>
-        <div class='ciudad'>imagen: ${thumbnailUrl} </div>
+        <div>titulo ${title} </div>
+        <div>url: ${url} </div>
+        <div>imagen: ${thumbnailUrl} </div>
         `
 
         body.appendChild(div)
